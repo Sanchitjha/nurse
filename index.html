@@ -6,9 +6,15 @@
   <title>Seva Saathi | Trusted Care and Assistance | Book on WhatsApp</title>
   <meta name="description" content="Hospital visits, elderly care, home nursing, urgent help, errands and more. A trained, verified Saathi by your side, booked in two minutes on WhatsApp. Pay after the service.">
   <meta name="theme-color" content="#0c1c35">
+  <!-- Placeholder content is live: keep this line until real details are in, then delete it so Google can index the site. -->
+  <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="Seva Saathi | Trusted Care and Assistance">
   <meta property="og:description" content="A trained, verified Saathi by your side, booked in two minutes on WhatsApp.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nurse-rose.vercel.app/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,6 +75,7 @@
         <a class="btn btn-amber" data-wa href="#"><svg><use href="#i-wa"/></svg><span data-hi="WhatsApp पर बुक करें">Book on WhatsApp</span></a>
         <a class="btn btn-outline" data-tel href="#"><svg><use href="#i-phone"/></svg><span data-phone>+91 98765 43210</span></a>
       </div>
+      <p class="reveal d2 quick-link"><a class="link-u" href="#booking" data-hi="या एक छोटा फ़ॉर्म भरें और अनुमानित कीमत देखें →">Or fill a quick form and see an estimate →</a></p>
       <ul class="chips reveal d3">
         <li class="chip"><span class="dot"></span><span data-html data-hi="{city} में उपलब्ध · और शहरों में जल्द">Live in <span data-city>Your City</span> · expanding soon</span></li>
         <li class="chip"><svg><use href="#i-globe"/></svg><span data-hi="English · हिंदी">English · हिंदी</span></li>
@@ -79,6 +86,9 @@
 
     <div class="hero-phone reveal d2">
       <p class="phone-label" data-hi="नया: WhatsApp के अंदर ही अपना साथी बुक करें">New: book your Saathi right inside WhatsApp</p>
+      <div class="phone-wrap">
+      <span class="float-chip fc-a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-hi="फ़ोटो ID के साथ">Photo ID verified</span></span>
+      <span class="float-chip fc-b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 14.5h2"/></svg><span data-hi="भुगतान सेवा के बाद, UPI से">Pay after, via UPI</span></span>
       <div class="phone" aria-label="WhatsApp booking demo">
         <div class="phone-screen">
           <div class="phone-notch"></div>
@@ -88,8 +98,19 @@
           <div class="wa-input"><span>Message</span><i>➤</i></div>
         </div>
       </div>
+      </div>
       <button class="replay" id="replay" type="button" data-hi="↺ दोबारा देखें">↺ Replay</button>
     </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="strip" aria-label="Highlights">
+  <div class="wrap strip-grid">
+    <div class="strip-item reveal"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b data-hi="सत्यापित साथी">Verified Saathis</b><span data-hi="आने से पहले नाम और फ़ोटो ID">Name and photo ID before arrival</span></div></div>
+    <div class="strip-item reveal d1"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><b data-hi="PIN से सुरक्षित विज़िट">PIN-secured visits</b><span data-hi="शुरू और ख़त्म आपके हाथ में">You start and end every visit</span></div></div>
+    <div class="strip-item reveal d2"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 14.5h2"/></svg></span><div><b data-hi="सेवा के बाद भुगतान">Pay after the service</b><span data-hi="UPI से, GST बिल WhatsApp पर">By UPI, GST bill on WhatsApp</span></div></div>
+    <div class="strip-item reveal d3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b data-hi="24×7 WhatsApp पर">24×7 on WhatsApp</b><span data-hi="किसी भी समय बुक करें या SOS भेजें">Book or send an SOS at any hour</span></div></div>
   </div>
 </section>
 
@@ -108,6 +129,17 @@
       <p data-hi="महिला साथी सुबह 9 से शाम 6 बजे तक उपलब्ध हैं।">Female Saathis are available 9 AM to 6 PM.</p>
       <p data-html data-hi="हर कीमत पर <span data-gst></span>% GST अतिरिक्त है, बिल में CGST और SGST अलग दिखते हैं। भुगतान सेवा के बाद UPI से।"><span data-gst>18</span>% GST is extra on every price on this page, shown as CGST and SGST on your bill. Payment is by UPI after the service.</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHO WE HELP ============ -->
+<section class="section tight who" id="who">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-hi="किनके लिए">Who we help</p>
+      <h2 data-hi="जब परिवार दूर हो, या हाथ कम पड़ें।">When family is far away, or there are not enough hands.</h2>
+    </div>
+    <div class="who-grid" id="whoGrid"></div>
   </div>
 </section>
 
@@ -150,6 +182,35 @@
   </div>
 </section>
 
+<!-- ============ BOOKING FORM ============ -->
+<section class="section mist" id="booking">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow" data-hi="अपनी विज़िट प्लान करें">Plan your visit</p>
+      <h2 data-hi="बताइए क्या चाहिए। हम उसे WhatsApp पर भेज देंगे।">Tell us what you need. We take it to WhatsApp.</h2>
+      <p data-hi="फ़ॉर्म भरें, अनुमानित कीमत देखें और तैयार मैसेज भेजें। हमारी टीम के पुष्टि करने तक कुछ बुक नहीं होता।">Fill this in, see an estimate and send it as a ready message. Nothing is booked until our team confirms on WhatsApp.</p>
+    </div>
+    <div class="book-grid">
+      <form class="book-form reveal" id="bookForm" novalidate>
+        <div class="field"><label for="bkService" data-hi="सेवा">Service</label><select id="bkService" name="service"></select></div>
+        <div class="field"><label for="bkHours" data-hi="कितनी देर">How long</label><select id="bkHours" name="hours"></select></div>
+        <div class="field"><label for="bkDate" data-hi="तारीख़">Date</label><input type="date" id="bkDate" name="date"></div>
+        <div class="field"><label for="bkTime" data-hi="शुरू होने का समय">Start time</label><input type="time" id="bkTime" name="time"></div>
+        <div class="field full"><label for="bkArea" data-hi="साथी कहाँ आए? (इलाक़ा, अस्पताल या पता)">Where should the Saathi come? (area, hospital or address)</label><input type="text" id="bkArea" name="area" autocomplete="off" required data-hi-ph="जैसे: सिटी हॉस्पिटल OPD, ब्लॉक B" placeholder="e.g. City Hospital OPD, Block B" aria-describedby="bkErr"></div>
+        <div class="field"><label for="bkName" data-hi="साथी किससे मिलेगा?">Who will the Saathi meet?</label><input type="text" id="bkName" name="name" autocomplete="off" data-hi-ph="नाम" placeholder="Name"></div>
+        <div class="field"><label for="bkPhone" data-hi="वहाँ संपर्क नंबर">Contact number on site</label><input type="tel" id="bkPhone" name="phone" inputmode="tel" autocomplete="off" data-hi-ph="10 अंकों का मोबाइल नंबर" placeholder="10-digit mobile number" aria-describedby="bkErr"></div>
+        <label class="check full" for="bkFemale"><input type="checkbox" id="bkFemale" name="female"><span data-hi="मुझे महिला साथी चाहिए (सुबह 9 से शाम 6)">I would like a female Saathi (9 AM to 6 PM)</span></label>
+        <p class="hint full" id="bkHint" hidden role="status"></p>
+        <div class="field full"><label for="bkNotes" data-hi="कुछ और बताना है? (वैकल्पिक)">Anything else we should know? (optional)</label><textarea id="bkNotes" name="notes" rows="3"></textarea></div>
+        <p class="form-err full" id="bkErr" role="alert" hidden></p>
+        <button class="btn btn-wa btn-block full" type="submit"><svg><use href="#i-wa"/></svg><span data-hi="WhatsApp पर भेजें">Send on WhatsApp</span></button>
+        <p class="form-note full" data-hi="कृपया इस फ़ॉर्म में OTP, PIN या कार्ड की जानकारी न लिखें।">Please do not type OTPs, PINs or card details in this form.</p>
+      </form>
+      <aside class="estimate reveal d2" id="estimate" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
 <!-- ============ TRUST ============ -->
 <section class="section navy" id="trust">
   <div class="wrap">
@@ -185,7 +246,7 @@
     </div>
     <div class="safety-grid" id="safetyGrid"></div>
     <div class="safety-foot reveal">
-      <a class="link-u" href="#" data-hi="पूरी शर्तें पढ़ें">Read the full terms</a>
+      <a class="link-u" href="terms.html" data-hi="पूरी शर्तें पढ़ें">Read the full terms</a>
       <a class="link-u" href="#help" data-hi="सवालों के जवाब, हेल्प सेंटर में">Questions, answered in the Help centre</a>
     </div>
   </div>
@@ -330,7 +391,7 @@
     </div>
     <div class="foot-bottom">
       <p class="emergency" data-hi="चिकित्सकीय आपातकाल में पहले 102 / 108 (एम्बुलेंस) पर कॉल करें। हम साथ रहने वाला व्यक्ति उपलब्ध कराते हैं, चिकित्सकीय इलाज नहीं।">For medical emergencies, call 102 / 108 (ambulance) first. We provide a person by your side, not medical treatment.</p>
-      <p>© <span data-year>2026</span> <span data-brand>Seva Saathi</span>. <span data-hi="सर्वाधिकार सुरक्षित।">All rights reserved.</span> · <a href="#" data-hi="शर्तें">Terms</a> · <a href="#" data-hi="गोपनीयता">Privacy</a> · <a href="#" data-hi="रिफ़ंड नीति">Refund policy</a></p>
+      <p>© <span data-year>2026</span> <span data-brand>Seva Saathi</span>. <span data-hi="सर्वाधिकार सुरक्षित।">All rights reserved.</span> · <a href="terms.html" data-hi="शर्तें">Terms</a> · <a href="privacy.html" data-hi="गोपनीयता">Privacy</a> · <a href="refund.html" data-hi="रिफ़ंड नीति">Refund policy</a></p>
     </div>
   </div>
 </footer>
