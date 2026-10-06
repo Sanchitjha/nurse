@@ -96,7 +96,7 @@ em { font-style: italic; }
 
 /* ---------- header ---------- */
 .site-header {
-  position: sticky; top: 0; z-index: 50; height: var(--header-h);
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; height: var(--header-h);
   background: rgba(255, 255, 255, 0.86); backdrop-filter: saturate(1.4) blur(12px);
   border-bottom: 1px solid transparent; transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -334,7 +334,7 @@ table.price-table { width: 100%; border-collapse: collapse; min-width: 720px; fo
 .emergency { background: rgba(179, 38, 30, 0.18); border: 1px solid rgba(255, 138, 128, 0.4); color: #ffd6d2; padding: 12px 16px; border-radius: 12px; }
 
 /* ---------- floating wa ---------- */
-.fab { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: inline-flex; align-items: center; gap: 10px; background: var(--wa); color: #06361c; text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 999px; box-shadow: 0 12px 30px rgba(7, 54, 28, 0.35); transition: transform 0.2s var(--ease); }
+.fab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 60; display: inline-flex; align-items: center; gap: 10px; background: var(--wa); color: #06361c; text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 999px; box-shadow: 0 12px 30px rgba(7, 54, 28, 0.35); transition: transform 0.2s var(--ease); }
 .fab:hover { transform: translateY(-3px); }
 .fab svg { width: 24px; height: 24px; }
 
