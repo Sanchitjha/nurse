@@ -126,6 +126,14 @@ window.CONTENT = {
     },
   ],
 
+  /* "Who we help" cards. s = service pre-selected in the booking form */
+  who: [
+    { i: "phone", s: "elderly", t: { en: "Children living away", hi: "दूर रहने वाले बच्चे" }, d: { en: "You live in another city or country. A Saathi is with your parents, and you get updates on WhatsApp.", hi: "आप दूसरे शहर या देश में हैं। साथी आपके माता-पिता के पास रहता है और आपको WhatsApp पर अपडेट मिलते हैं।" } },
+    { i: "hospital", s: "hospital", t: { en: "Families at the hospital", hi: "अस्पताल में परिवार" }, d: { en: "One person stays with the patient while the rest of the family rests, works or runs the house.", hi: "एक व्यक्ति मरीज़ के पास रहता है ताकि बाकी परिवार आराम कर सके, काम कर सके या घर संभाल सके।" } },
+    { i: "elderly", s: "elderly", t: { en: "Elders living alone", hi: "अकेले रहने वाले बुज़ुर्ग" }, d: { en: "Regular company, a walk, medicine reminders and a trusted face to call.", hi: "नियमित साथ, सैर, दवा की याद और एक भरोसेमंद चेहरा जिसे बुलाया जा सके।" } },
+    { i: "personal", s: "personal", t: { en: "Busy professionals", hi: "व्यस्त लोग" }, d: { en: "Queues, paperwork and errands handled, so a working day is not lost to them.", hi: "लाइन, काग़ज़ और छोटे काम हम संभालें, ताकि आपका कामकाजी दिन उनमें न जाए।" } },
+  ],
+
   how: [
     { t: { en: "Say hi on WhatsApp", hi: "WhatsApp पर नमस्ते कहें" }, d: { en: "Message us and pick your language: English or Hindi.", hi: "हमें मैसेज करें और अपनी भाषा चुनें: अंग्रेज़ी या हिंदी।" } },
     { t: { en: "Tell us what you need", hi: "बताएँ क्या चाहिए" }, d: { en: "One short form: the service, time, place and who the Saathi meets. You see the price first.", hi: "एक छोटा फ़ॉर्म: सेवा, समय, जगह और साथी किससे मिलेगा। कीमत पहले ही दिखेगी।" } },
