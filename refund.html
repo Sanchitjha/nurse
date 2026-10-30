@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refund and Cancellation Policy | Sewa Saathi Home Care</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header scrolled">
+  <div class="wrap header-in">
+    <a class="brand" href="./" aria-label="Home"><img src="images/logo-emblem.png" alt="" width="46" height="45"><span class="brand-text"><span class="brand-name" data-brand>Sewa Saathi</span><span class="brand-sub" data-tagline>Home Care</span></span></a>
+    <div class="header-actions"><a class="btn btn-primary btn-sm" data-wa href="#">Book now</a></div>
+  </div>
+</header>
+<main class="wrap legal-wrap">
+  <a class="back-link" href="./">← Back to home</a>
+  <h1>Refund and Cancellation Policy</h1>
+  <p class="draft"><b>Draft template.</b> This page is a starting point with placeholder wording. Replace the [bracketed] parts and have it reviewed by a lawyer before you rely on it.</p>
+  <p>This page explains cancellations and refunds for bookings with [Business name].</p>
+  <h2>Cancellations</h2>
+  <ul>
+    <li>Cancel or change by messaging us on WhatsApp.</li>
+    <li>[State what applies before the caregiver is on the way, and after.]</li>
+  </ul>
+  <h2>Billing issues</h2>
+  <ul>
+    <li>If a bill looks wrong, message us within [48 hours] and we will review it.</li>
+    <li>Where a refund is due, it is sent through the same payment method within [5 working days].</li>
+  </ul>
+  <h2>Service problems</h2>
+  <ul>
+    <li>If the caregiver did not arrive or the care was not as described, tell us the same day so we can make it right.</li>
+  </ul>
+  <h2>Contact</h2>
+  <p>Questions about this page? Reach us on WhatsApp at <span data-phone>+91 98765 43210</span> or write to <span data-email>hello@example.com</span>.</p>
+  <p style="color:var(--muted);font-size:14px">Last updated: [date]</p>
+</main>
+<footer class="site-footer"><div class="wrap"><p style="margin:0">© <span data-year>2026</span> <span data-brand>Sewa Saathi</span>. <a href="./">Home</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refund policy</a></p></div></footer>
+<script src="js/config.js"></script>
+<script>
+(function () {
+  var S = window.SITE;
+  function q(s) { return document.querySelectorAll(s); }
+  q('[data-brand]').forEach(function (e) { e.textContent = S.brand; });
+  q('[data-tagline]').forEach(function (e) { e.textContent = S.tagline; });
+  q('[data-phone]').forEach(function (e) { e.textContent = S.phone; });
+  q('[data-email]').forEach(function (e) { e.textContent = S.email; });
+  q('[data-year]').forEach(function (e) { e.textContent = new Date().getFullYear(); });
+  q('[data-wa]').forEach(function (e) { e.href = 'https://wa.me/' + S.whatsapp + '?text=' + encodeURIComponent(S.defaultMessage); e.target = '_blank'; e.rel = 'noopener'; });
+  document.title = document.title.replace('Sewa Saathi', S.brand);
+})();
+</script>
+</body>
+</html>

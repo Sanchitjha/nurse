@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Site behaviour: config fill, language toggle, section rendering,
-   plans dialog, WhatsApp chat demo, header/menu, scroll reveal.
+   Site behaviour: config fill, language toggle, section rendering, rate list,
+   plans dialog, booking form + estimate, WhatsApp chat demo, header/menu.
    Content lives in content.js, settings in config.js.
    ========================================================================== */
 (function () {
@@ -18,36 +18,36 @@
   /* ---------- UI strings used by generated markup ---------- */
   const UI = {
     en: {
-      live: "LIVE", soon: "COMING SOON", from: "from", perHour: "/ hour", plansDetails: "Plans & details",
-      pricingLaunch: "Pricing at launch", notify: "Notify me", service: "Service", hour: "Per hour",
-      hours: "hours", save: "Save", best: "BEST VALUE", book: "Book {name} on WhatsApp",
-      bookMsg: "Hi, I would like to book {name}.", notifyMsg: "Hi, please tell me when {name} launches.",
-      leadLive: "{n} services are live in {city}. Book by the hour, or take a fixed-price plan and pay less. Open any card to see the plans and what each one saves.",
-      fee: "Fixed-price plans from <b>₹{min}</b>, up to <b>{pct}% less</b> than the hourly meter.", seePlans: "See plans and pricing",
-      gst: "+ {gst}% GST", you: "Included",
-      knowMore: "Book a visit", hrsOpt: "{n} hours",
-      estTitle: "Your estimate", estService: "Service", estDuration: "Duration", estPrice: "Price", estGst: "GST {gst}%",
-      estTotal: "Estimated total", estPlan: "{label} plan, you save {amt}",
-      estTip: "Tip: 4, 8 and 12 hour bookings use fixed-price plans that cost less per hour.",
-      estNote: "Arrival fee ₹0–99 is confirmed when your Saathi is assigned. You pay by UPI after the service.",
-      hintFemale: "Female Saathis are available 9 AM to 6 PM. Choose a start time in that window, or we will tell you what is free.",
-      errArea: "Please tell us where the Saathi should come.", errPhone: "Enter a valid 10-digit mobile number, or leave it blank.",
+      atHome: "AT HOME", from: "from", perHour: "/ hour", details: "Details & book", service: "Service", rate: "Rate",
+      hrsOpt: "{n} hours", hour1: "1 hour",
+      book: "Book {name} on WhatsApp", bookMsg: "Hi, I would like to book {name}.", bookProc: "Book on WhatsApp",
+      procMsg: "Hi, I would like to book a nursing procedure.", icuMsg: "Hi, I would like to know about Home ICU Setup.",
+      icuAsk: "Ask about ICU setup", icuIncludes: "Includes",
+      leadLive: "{n} care services for your loved ones at home in {city}, plus nursing procedures and a complete Home ICU Setup. Every care service has four rates: hourly, 8 hours, day care and 24 hours.",
+      fee: "Care rates start at <b>₹{min}</b> per hour.", seeRates: "See the full rate list",
+      estTitle: "Your estimate", estService: "Service", estDuration: "Duration", estRate: "Rate", estGst: "GST {gst}%",
+      estTotal: "Estimated charge",
+      estNote: "The final amount is confirmed by our team on WhatsApp.",
+      estIcu: "Our team will call you to explain the setup and what is included.",
+      errArea: "Please tell us where the care is needed.", errPhone: "Enter a valid 10-digit mobile number, or leave it blank.",
+      optCare: "Care services", optProc: "Nursing procedures", optIcu: "Home ICU setup",
+      priceNoteGst: "{gst}% GST is extra.", priceNoteBase: "Prices shown are as per our rate list.",
     },
     hi: {
-      live: "उपलब्ध", soon: "जल्द आ रहा है", from: "शुरू", perHour: "/ घंटा", plansDetails: "प्लान और जानकारी",
-      pricingLaunch: "लॉन्च पर कीमत", notify: "मुझे बताएँ", service: "सेवा", hour: "प्रति घंटा",
-      hours: "घंटे", save: "बचत", best: "सबसे किफ़ायती", book: "WhatsApp पर {name} बुक करें",
-      bookMsg: "नमस्ते, मैं {name} बुक करना चाहता/चाहती हूँ।", notifyMsg: "नमस्ते, {name} शुरू होने पर मुझे बताएँ।",
-      leadLive: "{city} में {n} सेवाएँ उपलब्ध हैं। घंटे के हिसाब से बुक करें, या फ़िक्स्ड प्लान लेकर कम दें। हर कार्ड खोलकर प्लान और बचत देखें।",
-      fee: "फ़िक्स्ड प्लान <b>₹{min}</b> से शुरू, घंटे की दर से <b>{pct}% तक कम</b>।", seePlans: "प्लान और कीमतें देखें",
-      gst: "+ {gst}% GST", you: "शामिल",
-      knowMore: "विज़िट बुक करें", hrsOpt: "{n} घंटे",
-      estTitle: "आपका अनुमान", estService: "सेवा", estDuration: "अवधि", estPrice: "कीमत", estGst: "GST {gst}%",
-      estTotal: "अनुमानित कुल", estPlan: "{label} प्लान, आपकी बचत {amt}",
-      estTip: "सुझाव: 4, 8 और 12 घंटे की बुकिंग फ़िक्स्ड प्लान में आती है, जो प्रति घंटा सस्ती पड़ती है।",
-      estNote: "आगमन शुल्क ₹0–99 साथी तय होने पर बताया जाता है। भुगतान सेवा के बाद UPI से।",
-      hintFemale: "महिला साथी सुबह 9 से शाम 6 बजे तक उपलब्ध हैं। इसी बीच का समय चुनें, वरना हम बताएँगे कि कब उपलब्ध है।",
-      errArea: "कृपया बताएँ कि साथी को कहाँ आना है।", errPhone: "10 अंकों का सही मोबाइल नंबर लिखें, या खाली छोड़ दें।",
+      atHome: "घर पर", from: "शुरू", perHour: "/ घंटा", details: "जानकारी और बुकिंग", service: "सेवा", rate: "दर",
+      hrsOpt: "{n} घंटे", hour1: "1 घंटा",
+      book: "WhatsApp पर {name} बुक करें", bookMsg: "नमस्ते, मैं {name} बुक करना चाहता/चाहती हूँ।", bookProc: "WhatsApp पर बुक करें",
+      procMsg: "नमस्ते, मुझे नर्सिंग प्रक्रिया के लिए बुकिंग करनी है।", icuMsg: "नमस्ते, मुझे होम ICU सेटअप की जानकारी चाहिए।",
+      icuAsk: "ICU सेटअप के बारे में पूछें", icuIncludes: "शामिल",
+      leadLive: "{city} में आपके अपनों के लिए घर पर {n} देखभाल सेवाएँ, साथ में नर्सिंग प्रक्रियाएँ और पूरा होम ICU सेटअप। हर देखभाल सेवा की चार दरें: प्रति घंटा, 8 घंटे, डे केयर और 24 घंटे।",
+      fee: "देखभाल की दरें <b>₹{min}</b> प्रति घंटा से शुरू।", seeRates: "पूरी रेट लिस्ट देखें",
+      estTitle: "आपका अनुमान", estService: "सेवा", estDuration: "अवधि", estRate: "दर", estGst: "GST {gst}%",
+      estTotal: "अनुमानित शुल्क",
+      estNote: "अंतिम राशि हमारी टीम WhatsApp पर पक्का करती है।",
+      estIcu: "हमारी टीम आपको फ़ोन करके सेटअप और उसमें क्या शामिल है, समझाएगी।",
+      errArea: "कृपया बताएँ कि देखभाल कहाँ चाहिए।", errPhone: "10 अंकों का सही मोबाइल नंबर लिखें, या खाली छोड़ दें।",
+      optCare: "देखभाल सेवाएँ", optProc: "नर्सिंग प्रक्रियाएँ", optIcu: "होम ICU सेटअप",
+      priceNoteGst: "{gst}% GST अतिरिक्त।", priceNoteBase: "दिखाई गई कीमतें हमारी रेट लिस्ट के अनुसार हैं।",
     },
   };
   const ui = (k, vars) => fmt(UI[lang][k], vars);
@@ -60,20 +60,19 @@
   }
   const tx = (o) => fmt(o[lang] || o.en);
   const inr = (n) => "₹" + Number(n).toLocaleString("en-IN");
-  const planPrice = (hourly, p) => Math.round((hourly * p.hours * (1 - p.off)) / 10) * 10;
-  const planSave = (hourly, p) => Math.round((1 - planPrice(hourly, p) / (hourly * p.hours)) * 100);
-  const live = () => DATA.services.filter((s) => s.live);
   const waLink = (text) => "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(text || SITE.defaultMessage);
   const icon = (id) => '<svg viewBox="0 0 24 24" aria-hidden="true">' + (DATA.icons[id] || "") + "</svg>";
+  const hoursLabel = (n) => (n === 1 ? ui("hour1") : ui("hrsOpt", { n }));
+  const gstOf = (n) => Math.round((n * (Number(SITE.gst) || 0)) / 100);
 
   /* ---------- config + static translation ---------- */
   function fillConfig() {
     $$("[data-brand]").forEach((e) => (e.textContent = SITE.brand));
+    $$("[data-tagline]").forEach((e) => (e.textContent = SITE.tagline));
     $$("[data-city]").forEach((e) => (e.textContent = SITE.city));
     $$("[data-phone]").forEach((e) => (e.textContent = SITE.phone));
     $$("[data-email]").forEach((e) => (e.textContent = SITE.email));
     $$("[data-address]").forEach((e) => (e.textContent = SITE.address));
-    $$("[data-gst]").forEach((e) => (e.textContent = SITE.gst));
     $$("[data-year]").forEach((e) => (e.textContent = new Date().getFullYear()));
     $$("[data-wa]").forEach((e) => {
       e.href = waLink(e.dataset.waText);
@@ -82,8 +81,12 @@
     });
     $$("[data-tel]").forEach((e) => (e.href = "tel:" + SITE.phone.replace(/[^+\d]/g, "")));
     $$("[data-mail]").forEach((e) => (e.href = "mailto:" + SITE.email));
-    $$("[data-insta]").forEach((e) => { e.href = SITE.instagram; if (SITE.instagram !== "#") { e.target = "_blank"; e.rel = "noopener"; } });
-    document.title = fmt(lang === "hi" ? "{brand} | भरोसेमंद देखभाल और सहायता | WhatsApp पर बुक करें" : "{brand} | Trusted Care and Assistance | Book on WhatsApp");
+    $$("[data-insta]").forEach((e) => {
+      const set = SITE.instagram && SITE.instagram !== "#";
+      e.hidden = !set;
+      if (set) { e.href = SITE.instagram; e.target = "_blank"; e.rel = "noopener"; }
+    });
+    document.title = fmt(lang === "hi" ? "{brand} होम केयर | घर पर नर्सिंग, मरीज़ और बुज़ुर्ग देखभाल" : "{brand} Home Care | Nursing, Patient and Elder Care at Home");
   }
 
   function applyStatic() {
@@ -101,43 +104,66 @@
 
   /* ---------- generated sections ---------- */
   const stagger = ["", "d1", "d2"];
+  const tierBoxes = (p) => DATA.tiers.map((t) => '<div class="tier"><small>' + tx(t.label) + "</small><b>" + inr(p[t.key]) + "</b></div>").join("");
 
   function renderServices() {
-    const liveCount = live().length;
-    $("#svcLead").textContent = ui("leadLive", { n: liveCount });
+    $("#svcLead").textContent = ui("leadLive", { n: DATA.services.length });
+    const minHourly = Math.min(...DATA.services.map((s) => s.p.hourly));
+    $("#feeBanner").innerHTML = "<span>" + ui("fee", { min: minHourly.toLocaleString("en-IN") }) + '</span> <a class="link-u" href="#pricing">' + ui("seeRates") + "</a>";
+    $("#distanceNote").textContent = tx(DATA.distance);
 
-    const prices = live().map((s) => planPrice(s.hourly, DATA.plans[0]));
-    const maxSave = Math.max(...live().flatMap((s) => DATA.plans.map((p) => planSave(s.hourly, p))));
-    $("#feeBanner").innerHTML = "<span>" + ui("fee", { min: Math.min(...prices).toLocaleString("en-IN"), pct: maxSave }) + '</span> <a class="link-u" href="#pricing">' + ui("seePlans") + "</a>";
-
-    $("#svcGrid").innerHTML = DATA.services.map((s, i) => {
+    const care = DATA.services.map((s, i) => {
       const name = tx(s.name);
-      const foot = s.live
-        ? '<div class="price">' + ui("from") + " <b>₹" + s.hourly + "</b> " + ui("perHour") + "<small>" + ui("gst") + '</small></div><button type="button" class="btn btn-outline" data-plans="' + s.id + '">' + ui("plansDetails") + "</button>"
-        : '<div class="price"><b style="font-size:20px">' + ui("pricingLaunch") + '</b></div><a class="btn btn-outline" data-wa data-wa-text="' + ui("notifyMsg", { name }) + '" href="#">' + ui("notify") + "</a>";
       return (
-        '<article class="svc ' + (s.live ? "" : "soon") + " reveal " + stagger[i % 3] + '">' +
+        '<article class="svc reveal ' + stagger[i % 3] + '">' +
         '<div class="svc-img"><img src="images/' + s.img + '" alt="" loading="lazy" width="800" height="500">' +
         '<div class="svc-cap"><b>' + name + "</b><span>" + tx(s.cap) + "</span></div></div>" +
-        '<div class="svc-body"><div class="svc-top"><span class="ico">' + icon(s.id) + '</span><span class="pill ' + (s.live ? "live" : "soon") + '">' + (s.live ? ui("live") : ui("soon")) + "</span></div>" +
-        "<h3>" + name + "</h3><p>" + tx(s.desc) + "</p>" + foot + "</div></article>"
+        '<div class="svc-body"><div class="svc-top"><span class="ico">' + icon(s.id) + '</span><span class="pill live">' + ui("atHome") + "</span></div>" +
+        "<h3>" + name + "</h3><p>" + tx(s.desc) + '</p><div class="tiers">' + tierBoxes(s.p) + '</div>' +
+        '<button type="button" class="btn btn-outline" data-plans="' + s.id + '">' + ui("details") + "</button></div></article>"
       );
-    }).join("");
+    });
+
+    const pi = DATA.proceduresInfo;
+    const procCard =
+      '<article class="svc reveal ' + stagger[DATA.services.length % 3] + '">' +
+      '<div class="svc-img"><img src="images/' + pi.img + '" alt="" loading="lazy" width="800" height="500"><div class="svc-cap"><b>' + tx(pi.name) + "</b><span>" + tx(pi.cap) + "</span></div></div>" +
+      '<div class="svc-body"><div class="svc-top"><span class="ico">' + icon("procedures") + '</span><span class="pill live">' + ui("atHome") + "</span></div>" +
+      "<h3>" + tx(pi.name) + "</h3><p>" + tx(pi.desc) + '</p><ul class="proc-list">' +
+      DATA.procedures.map((x) => "<li><span>" + tx(x.name) + "</span><b>" + inr(x.price) + "</b></li>").join("") +
+      '</ul><a class="btn btn-outline" data-wa data-wa-text="' + ui("procMsg") + '" href="#">' + ui("bookProc") + "</a></div></article>";
+
+    $("#svcGrid").innerHTML = care.join("") + procCard;
+
+    const u = DATA.setup;
+    $("#icuBand").innerHTML =
+      '<div class="icu-band reveal"><div class="icu-img"><img src="images/' + u.img + '" alt="" loading="lazy" width="800" height="500"></div>' +
+      '<div class="icu-copy"><span class="ico">' + icon("icu") + "</span><h3>" + tx(u.name) + "</h3><p>" + tx(u.desc) + "</p>" +
+      '<div class="icu-price"><b>' + inr(u.price) + "</b><span>" + tx(u.detail) + "</span></div>" +
+      '<a class="btn btn-primary" data-wa data-wa-text="' + ui("icuMsg") + '" href="#">' + ui("icuAsk") + "</a></div></div>";
   }
 
   function renderPricing() {
-    $("#priceHead").innerHTML =
-      "<th>" + ui("service") + "</th><th>" + ui("hour") + "</th>" +
-      DATA.plans.map((p) => "<th>" + tx(p.label) + " · " + p.hours + " " + ui("hours") + "</th>").join("");
-    $("#priceBody").innerHTML = live().map((s) => {
-      const cells = DATA.plans.map((p) =>
-        '<td data-label="' + tx(p.label) + " · " + p.hours + " " + ui("hours") + '">' + inr(planPrice(s.hourly, p)) + "<small>" + ui("save") + " " + planSave(s.hourly, p) + "%</small></td>").join("");
-      return '<tr><td>' + tx(s.name) + '</td><td data-label="' + ui("hour") + '">₹' + s.hourly + "</td>" + cells + "</tr>";
-    }).join("");
+    $("#priceHead").innerHTML = "<th>" + ui("service") + "</th>" + DATA.tiers.map((t) => "<th>" + tx(t.label) + "</th>").join("");
+    $("#priceBody").innerHTML = DATA.services.map((s) =>
+      "<tr><td>" + tx(s.name) + "</td>" + DATA.tiers.map((t) => '<td data-label="' + tx(t.label) + '">' + inr(s.p[t.key]) + "</td>").join("") + "</tr>").join("");
+
+    $("#procHead").innerHTML = "<th>" + ui("service") + "</th><th>" + ui("rate") + "</th>";
+    $("#procBody").innerHTML =
+      DATA.procedures.map((x) => "<tr><td>" + tx(x.name) + '</td><td data-label="' + ui("rate") + '">' + inr(x.price) + "</td></tr>").join("") +
+      "<tr><td>" + tx(DATA.setup.name) + "<small>" + tx(DATA.setup.detail) + '</small></td><td data-label="' + ui("rate") + '">' + inr(DATA.setup.price) + "</td></tr>";
+
+    const gst = Number(SITE.gst) > 0 ? " " + ui("priceNoteGst") : "";
+    $("#priceNote").textContent = tx(DATA.distance) + " " + ui("priceNoteBase") + gst;
   }
 
   function renderList(target, items, tpl) { $(target).innerHTML = items.map(tpl).join(""); }
 
+  function renderWho() {
+    renderList("#whoGrid", DATA.who, (x, i) =>
+      '<article class="who-card reveal ' + stagger[i % 3] + '"><span class="ico">' + icon(x.i) + "</span><h3>" + tx(x.t) + "</h3><p>" + tx(x.d) +
+      '</p><a class="link-u" href="#booking" data-prefill="' + x.s + '">' + (lang === "hi" ? "बुक करें" : "Book care") + " →</a></article>");
+  }
   function renderHow() {
     renderList("#howSteps", DATA.how, (x, i) => '<div class="step reveal ' + stagger[i % 3] + '"><h3>' + tx(x.t) + "</h3><p>" + tx(x.d) + "</p></div>");
   }
@@ -153,20 +179,62 @@
   function renderFaq() {
     renderList("#faqList", DATA.faq, (x) => "<details><summary>" + tx(x.q) + "</summary><p>" + tx(x.a) + "</p></details>");
   }
-  function renderWho() {
-    renderList("#whoGrid", DATA.who, (x, i) =>
-      '<article class="who-card reveal ' + stagger[i % 3] + '"><span class="ico">' + icon(x.i) + "</span><h3>" + tx(x.t) + "</h3><p>" + tx(x.d) +
-      '</p><a class="link-u" href="#booking" data-prefill="' + x.s + '">' + ui("knowMore") + " →</a></article>");
+  function renderFooter() {
+    $("#footServices").innerHTML =
+      DATA.services.map((s) => '<li><a href="#services" data-plans="' + s.id + '">' + tx(s.name) + "</a></li>").join("") +
+      '<li><a href="#services">' + tx(DATA.proceduresInfo.name) + "</a></li><li><a href=\"#services\">" + tx(DATA.setup.name) + "</a></li>";
   }
+
+  /* ---------- plans dialog (care services) ---------- */
+  const dlg = $("#plansDlg");
+  function openPlans(id) {
+    const s = DATA.services.find((x) => x.id === id);
+    if (!s || !dlg) return;
+    const name = tx(s.name);
+    $("#dlgImg").src = "images/" + s.img;
+    $("#dlgTitle").textContent = name;
+    $("#dlgDesc").textContent = tx(s.desc);
+    $("#dlgPlans").innerHTML = DATA.tiers.map((t) => '<div class="plan"><small>' + tx(t.label) + "</small><b>" + inr(s.p[t.key]) + "</b></div>").join("");
+    $("#dlgList").innerHTML = (s.points[lang] || s.points.en).map((p) => "<li>" + p + "</li>").join("");
+    $("#dlgBookTxt").textContent = ui("book", { name });
+    const book = $("#dlgBook");
+    book.dataset.waText = ui("bookMsg", { name });
+    book.href = waLink(book.dataset.waText);
+    book.target = "_blank";
+    book.rel = "noopener";
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-plans]");
+    if (trigger) {
+      if (!DATA.services.some((s) => s.id === trigger.dataset.plans)) return;
+      e.preventDefault(); openPlans(trigger.dataset.plans); return;
+    }
+    if (e.target === dlg || e.target.closest("#dlgX")) dlg.close();
+  });
 
   /* ---------- booking form + live estimate ---------- */
   const form = $("#bookForm");
   const pad = (n) => String(n).padStart(2, "0");
+  const DURATIONS = ["hourly:1", "hourly:2", "hourly:4", "hourly:6", "h8", "day", "h24"];
+
+  function durationLabel(code) {
+    if (code.indexOf("hourly:") === 0) return hoursLabel(Number(code.split(":")[1]));
+    return tx(DATA.tiers.find((t) => t.key === code).label);
+  }
+  function durationPrice(s, code) {
+    if (code.indexOf("hourly:") === 0) return s.p.hourly * Number(code.split(":")[1]);
+    return s.p[code];
+  }
 
   function setDefaultWhen() {
     const d = new Date();
     d.setMinutes(0, 0, 0);
     d.setHours(d.getHours() + 2);
+    if (d.getHours() < 7 || d.getHours() >= 21) { // late night: suggest 9 AM instead
+      if (d.getHours() >= 21) d.setDate(d.getDate() + 1);
+      d.setHours(9);
+    }
     const day = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
     const today = new Date();
     $("#bkDate").min = today.getFullYear() + "-" + pad(today.getMonth() + 1) + "-" + pad(today.getDate());
@@ -174,57 +242,54 @@
     if (!$("#bkTime").value) $("#bkTime").value = pad(d.getHours()) + ":00";
   }
 
-  function estimate() {
-    const s = DATA.services.find((x) => x.id === $("#bkService").value) || live()[0];
-    const h = Number($("#bkHours").value) || 4;
-    const plan = DATA.plans.find((p) => p.hours === h);
-    const hourlyTotal = s.hourly * h;
-    const base = plan ? planPrice(s.hourly, plan) : hourlyTotal;
-    const gstAmt = Math.round((base * SITE.gst) / 100);
-    return { s, h, plan, hourlyTotal, base, gstAmt, total: base + gstAmt, save: hourlyTotal - base };
+  /* what the select currently points at: a care service, a procedure or the ICU setup */
+  function selection() {
+    const v = $("#bkService").value;
+    if (v.indexOf("proc:") === 0) {
+      const p = DATA.procedures.find((x) => "proc:" + x.id === v) || DATA.procedures[0];
+      return { kind: "proc", name: p.name, price: p.price };
+    }
+    if (v === "icu") return { kind: "icu", name: DATA.setup.name, price: DATA.setup.price };
+    const s = DATA.services.find((x) => x.id === v) || DATA.services[0];
+    const code = $("#bkHours").value || "h8";
+    return { kind: "care", name: s.name, price: durationPrice(s, code), code, service: s };
   }
 
   function updateEstimate() {
     const box = $("#estimate");
     if (!box) return;
-    const e = estimate();
-    const priceCell = e.plan ? "<s>" + inr(e.hourlyTotal) + "</s>" + inr(e.base) : inr(e.base);
+    const sel = selection();
+    $("#bkHoursField").hidden = sel.kind !== "care";
+    const gst = gstOf(sel.price);
+    const total = sel.price + gst;
     box.innerHTML =
-      "<h3>" + ui("estTitle") + "</h3><dl class=\"est-rows\">" +
-      "<div><dt>" + ui("estService") + "</dt><dd>" + tx(e.s.name) + "</dd></div>" +
-      "<div><dt>" + ui("estDuration") + "</dt><dd>" + ui("hrsOpt", { n: e.h }) + "</dd></div>" +
-      "<div><dt>" + ui("estPrice") + "</dt><dd>" + priceCell + (e.plan ? '<br><span class="est-badge">' + ui("estPlan", { label: tx(e.plan.label), amt: inr(e.save) }) + "</span>" : "") + "</dd></div>" +
-      "<div><dt>" + ui("estGst", { gst: SITE.gst }) + "</dt><dd>" + inr(e.gstAmt) + "</dd></div></dl>" +
-      '<div class="est-total"><span>' + ui("estTotal") + "</span><b>" + inr(e.total) + "</b></div>" +
-      (e.plan ? "" : '<p class="est-tip">' + ui("estTip") + "</p>") +
-      '<p class="est-note">' + ui("estNote") + "</p>";
-    updateHint();
-  }
-
-  function updateHint() {
-    const hint = $("#bkHint");
-    if (!hint) return;
-    const hour = parseInt(($("#bkTime").value || "12:00").split(":")[0], 10);
-    const outside = $("#bkFemale").checked && (hour < 9 || hour >= 18);
-    hint.hidden = !outside;
-    hint.textContent = outside ? ui("hintFemale") : "";
+      "<h3>" + ui("estTitle") + '</h3><dl class="est-rows">' +
+      "<div><dt>" + ui("estService") + "</dt><dd>" + tx(sel.name) + "</dd></div>" +
+      (sel.kind === "care" ? "<div><dt>" + ui("estDuration") + "</dt><dd>" + durationLabel(sel.code) + "</dd></div>" : "") +
+      "<div><dt>" + ui("estRate") + "</dt><dd>" + inr(sel.price) + "</dd></div>" +
+      (gst ? "<div><dt>" + ui("estGst", { gst: SITE.gst }) + "</dt><dd>" + inr(gst) + "</dd></div>" : "") +
+      '</dl><div class="est-total"><span>' + ui("estTotal") + "</span><b>" + inr(total) + "</b></div>" +
+      (sel.kind === "icu" ? '<p class="est-tip">' + ui("estIcu") + "</p>" : "") +
+      '<p class="est-note">' + ui("estNote") + " " + tx(DATA.distance) + "</p>";
   }
 
   function renderBooking() {
     if (!form) return;
     const svc = $("#bkService"), hrs = $("#bkHours");
     const keepS = svc.value, keepH = hrs.value;
-    svc.innerHTML = live().map((s) => '<option value="' + s.id + '">' + tx(s.name) + "</option>").join("");
-    hrs.innerHTML = [2, 3, 4, 6, 8, 12].map((n) => '<option value="' + n + '">' + ui("hrsOpt", { n }) + "</option>").join("");
-    svc.value = keepS || live()[0].id;
-    hrs.value = keepH || "4";
+    svc.innerHTML =
+      '<optgroup label="' + ui("optCare") + '">' + DATA.services.map((s) => '<option value="' + s.id + '">' + tx(s.name) + "</option>").join("") + "</optgroup>" +
+      '<optgroup label="' + ui("optProc") + '">' + DATA.procedures.map((p) => '<option value="proc:' + p.id + '">' + tx(p.name) + "</option>").join("") + "</optgroup>" +
+      '<optgroup label="' + ui("optIcu") + '"><option value="icu">' + tx(DATA.setup.name) + "</option></optgroup>";
+    hrs.innerHTML = DURATIONS.map((c) => '<option value="' + c + '">' + durationLabel(c) + "</option>").join("");
+    svc.value = keepS || DATA.services[0].id;
+    hrs.value = keepH || "h8";
     setDefaultWhen();
     updateEstimate();
   }
 
   if (form) {
     ["#bkService", "#bkHours"].forEach((id) => $(id).addEventListener("change", updateEstimate));
-    ["#bkTime", "#bkFemale"].forEach((id) => $(id).addEventListener("change", updateHint));
     form.addEventListener("submit", (ev) => {
       ev.preventDefault();
       const err = $("#bkErr");
@@ -240,19 +305,23 @@
         field.setAttribute("aria-invalid", "true"); field.focus();
         return;
       }
-      const e = estimate();
+      const sel = selection();
+      const gst = gstOf(sel.price);
       const when = new Date($("#bkDate").value + "T" + ($("#bkTime").value || "10:00"));
       const whenTxt = isNaN(when) ? "" : when.toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" });
+      const savedLang = lang; lang = "en"; // the message is always in English for our team
+      const durTxt = sel.kind === "care" ? durationLabel(sel.code) : "";
+      lang = savedLang;
       const lines = [
-        "Hi, I would like to book " + e.s.name.en + ".",
-        whenTxt && "Date and time: " + whenTxt,
-        "Duration: " + e.h + " hours" + (e.plan ? " (" + e.plan.label.en + " plan)" : ""),
+        "Hi, I would like to book " + sel.name.en + ".",
+        whenTxt && "Start: " + whenTxt,
+        durTxt && "Duration: " + durTxt,
         "Location: " + area.value.trim(),
-        $("#bkName").value.trim() && "Saathi will meet: " + $("#bkName").value.trim(),
-        digits && "Contact on site: " + digits,
-        $("#bkFemale").checked && "Female Saathi: Yes",
+        $("#bkName").value.trim() && "Patient: " + $("#bkName").value.trim(),
+        digits && "Contact: " + digits,
+        $("#bkFemale").checked && "Female caregiver: Yes",
         $("#bkNotes").value.trim() && "Notes: " + $("#bkNotes").value.trim(),
-        "Estimate: " + inr(e.base) + " + " + SITE.gst + "% GST = " + inr(e.total),
+        "Rate: " + inr(sel.price) + (gst ? " + " + SITE.gst + "% GST = " + inr(sel.price + gst) : ""),
       ].filter(Boolean);
       const a = document.createElement("a");
       a.href = waLink(lines.join("\n"));
@@ -270,52 +339,22 @@
     if (p && form) { $("#bkService").value = p.dataset.prefill; updateEstimate(); }
   });
 
-  function renderFooter() {
-    $("#footServices").innerHTML = live().map((s) => '<li><a href="#services" data-plans="' + s.id + '">' + tx(s.name) + "</a></li>").join("");
-  }
-
-  /* ---------- plans dialog ---------- */
-  const dlg = $("#plansDlg");
-  function openPlans(id) {
-    const s = DATA.services.find((x) => x.id === id);
-    if (!s || !dlg) return;
-    const name = tx(s.name);
-    $("#dlgImg").src = "images/" + s.img;
-    $("#dlgTitle").textContent = name;
-    $("#dlgDesc").textContent = tx(s.desc);
-    $("#dlgPlans").innerHTML = DATA.plans.map((p) =>
-      '<div class="plan' + (p.best ? ' best" data-badge="' + ui("best") : "") + '"><small>' + tx(p.label) + " · " + p.hours + " " + ui("hours") +
-      "</small><b>" + inr(planPrice(s.hourly, p)) + "</b><em>" + ui("save") + " " + planSave(s.hourly, p) + "%</em></div>").join("");
-    $("#dlgList").innerHTML = (s.points ? s.points[lang] || s.points.en : []).map((p) => "<li>" + p + "</li>").join("");
-    $("#dlgBookTxt").textContent = ui("book", { name });
-    const book = $("#dlgBook");
-    book.dataset.waText = ui("bookMsg", { name });
-    book.href = waLink(book.dataset.waText);
-    book.target = "_blank";
-    book.rel = "noopener";
-    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
-  }
-  document.addEventListener("click", (e) => {
-    const trigger = e.target.closest("[data-plans]");
-    if (trigger) { e.preventDefault(); openPlans(trigger.dataset.plans); return; }
-    if (e.target === dlg || e.target.closest("#dlgX")) dlg.close();
-  });
-
   /* ---------- WhatsApp chat demo ---------- */
   const SCRIPT = [
     { w: "out", en: "Hi", hi: "नमस्ते" },
-    { w: "in", en: "Namaste! 🙏 Welcome to <b>{brand}</b>. Please choose your language:", hi: "नमस्ते! 🙏 <b>{brand}</b> में आपका स्वागत है। अपनी भाषा चुनें:", qr: ["English", "हिंदी"] },
+    { w: "in", en: "Namaste! 🙏 Welcome to <b>{brand}</b> Home Care. Please choose your language:", hi: "नमस्ते! 🙏 <b>{brand}</b> होम केयर में आपका स्वागत है। अपनी भाषा चुनें:", qr: ["English", "हिंदी"] },
     { w: "out", en: "English", hi: "हिंदी" },
-    { w: "in", en: "How can we help you today?", hi: "आज हम आपकी क्या मदद करें?", qr: ["Hospital Assist", "Elderly Care", "Home Nursing"] },
-    { w: "out", en: "Hospital Assist", hi: "अस्पताल सहायता" },
-    { w: "in", en: "Tap <b>Book your Saathi</b> and fill a short form. You will see the price first.", hi: "<b>साथी बुक करें</b> दबाएँ और छोटा फ़ॉर्म भरें। कीमत पहले दिखेगी।", qr: ["Book your Saathi"] },
+    { w: "in", en: "What care do you need at home?", hi: "घर पर किस देखभाल की ज़रूरत है?", qr: ["Patient Care", "Elder Care", "Baby Care"] },
+    { w: "out", en: "Patient Care", hi: "मरीज़ की देखभाल" },
+    { w: "in", en: "How long do you need care?", hi: "कितनी देर देखभाल चाहिए?", qr: ["Hourly", "8 hours", "Day care", "24 hours"] },
+    { w: "out", en: "8 hours", hi: "8 घंटे" },
     { w: "in", card: true },
     { w: "out", en: "Confirm ✅", hi: "कन्फ़र्म ✅" },
-    { w: "in", en: "Booked! 🎉 <b>Rohit S.</b> (ID SS-2041) is on the way, arriving in 18 min. Share your Start PIN <span class=\"pin\">4291</span> only at the door.", hi: "बुक हो गया! 🎉 <b>रोहित एस.</b> (ID SS-2041) रास्ते में हैं, 18 मिनट में पहुँचेंगे। स्टार्ट PIN <span class=\"pin\">4291</span> सिर्फ़ दरवाज़े पर दें।" },
+    { w: "in", en: "Booked! 🎉 Our team will call you shortly with your caregiver's details.", hi: "बुक हो गया! 🎉 हमारी टीम जल्द ही आपको केयरगिवर की जानकारी के साथ कॉल करेगी।" },
   ];
   const CARD = {
-    en: [["Service", "Hospital Assist"], ["When", "Today, 4:00 PM"], ["Where", "City Hospital OPD"], ["Price", "₹219/hr + GST"]],
-    hi: [["सेवा", "अस्पताल सहायता"], ["कब", "आज, शाम 4:00"], ["कहाँ", "सिटी हॉस्पिटल OPD"], ["कीमत", "₹219/घंटा + GST"]],
+    en: [["Service", "Patient Care"], ["Duration", "8 hours"], ["Rate", "₹399"], ["Where", "Your home"]],
+    hi: [["सेवा", "मरीज़ की देखभाल"], ["अवधि", "8 घंटे"], ["दर", "₹399"], ["कहाँ", "आपका घर"]],
   };
   const chat = $("#chat");
   let runId = 0;
@@ -410,8 +449,8 @@
     const ld = document.createElement("script");
     ld.type = "application/ld+json";
     ld.textContent = JSON.stringify({
-      "@context": "https://schema.org", "@type": "LocalBusiness", name: SITE.brand,
-      description: "Trained, verified assistants for hospital visits, elderly care, home nursing, errands and urgent help, booked on WhatsApp.",
+      "@context": "https://schema.org", "@type": "LocalBusiness", name: SITE.brand + " " + SITE.tagline,
+      description: "Home care: trained nurses, caregivers and attendants for patient care, elder care, critical care, baby care and nursing procedures at home.",
       telephone: SITE.phone, email: SITE.email, areaServed: SITE.city, url: location.origin + location.pathname,
       address: { "@type": "PostalAddress", streetAddress: SITE.address, addressLocality: SITE.city, addressCountry: "IN" },
     });
@@ -420,9 +459,10 @@
 
   /* ---------- boot ---------- */
   function renderAll() {
-    renderServices(); renderPricing(); renderWho(); renderBooking(); renderHow(); renderTrust(); renderSafety(); renderReviews(); renderFaq(); renderFooter();
+    renderServices(); renderPricing(); renderWho(); renderBooking(); renderHow();
+    renderTrust(); renderSafety(); renderReviews(); renderFaq(); renderFooter();
   }
-  function setLang(next, initial) {
+  function setLang(next) {
     lang = next === "hi" ? "hi" : "en";
     try { localStorage.setItem("lang", lang); } catch (e) { /* storage blocked */ }
     document.documentElement.lang = lang;
@@ -433,5 +473,5 @@
     observeReveals();
     playChat();
   }
-  setLang(lang, true);
+  setLang(lang);
 })();
