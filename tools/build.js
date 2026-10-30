@@ -464,7 +464,7 @@ function servicePage(lang, key) {
 </section>
 
 <section class="section tight cream">
-  <div class="wrap split">
+  <div class="wrap split svc-split">
     <div class="copy">
       <h2>${c.b("includedH2", { name })}</h2>
       <ul class="checks">${pointList.map((p) => '<li><span class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><span class="tick-t">' + escText(p) + "</span></div></li>").join("")}</ul>
