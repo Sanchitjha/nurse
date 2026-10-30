@@ -155,7 +155,9 @@ window.CONTENT = {
     { i: "siren", alert: true, t: { en: "Emergencies come first", hi: "आपातकाल पहले" }, d: { en: "For a medical emergency, call 102 / 108 (ambulance) FIRST. We provide care at home, not emergency treatment.", hi: "चिकित्सकीय आपातकाल में पहले 102 / 108 (एम्बुलेंस) पर कॉल करें। हम घर पर देखभाल देते हैं, आपातकालीन इलाज नहीं।" } },
   ],
 
-  /* SAMPLE reviews: replace with real customer feedback before launch */
+  /* SAMPLE reviews. Replace them with real customer feedback and add  real: true  to each real one.
+     While the site is not live they show with a "Sample" tag. Once the site is live, sample reviews
+     are hidden automatically, so invented testimonials never go public. */
   reviews: [
     { q: { en: "My father needed care after his surgery and I was in another city. The caregiver was patient and kept me updated every day. It gave me real peace of mind.", hi: "ऑपरेशन के बाद पिताजी को देखभाल चाहिए थी और मैं दूसरे शहर में था। केयरगिवर धैर्यवान था और रोज़ जानकारी देता था। बहुत सुकून मिला।" }, w: { en: "Patient Care family", hi: "मरीज़ की देखभाल, परिवार" } },
     { q: { en: "My mother has Alzheimer's. The caregiver understood her routine and was always calm and kind with her.", hi: "माँ को अल्ज़ाइमर है। केयरगिवर ने उनकी दिनचर्या समझी और हमेशा शांत और स्नेह से पेश आया।" }, w: { en: "Alzheimer's Care family", hi: "अल्ज़ाइमर देखभाल, परिवार" } },
