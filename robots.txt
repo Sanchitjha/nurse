@@ -1,0 +1,4 @@
+# The site still has placeholder details, so it is hidden from search engines.
+# Set the real details in js/config.js and run: node tools/build.js
+User-agent: *
+Disallow: /
