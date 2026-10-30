@@ -1,50 +1,65 @@
 # Sewa Saathi Home Care: website
 
-Static site. Open `index.html` in a browser (no build step, no install).
+A fast static website (English at `/`, Hindi at `/hi/`) built with a small script. No framework, no dependencies, only Node.
 
-Logo, colours and rates come from the client:
-- Logo: `images/brand/` (originals), `images/logo-emblem.png`, `images/logo-full-homecare.png`, `images/logo-full.png` (transparent PNGs).
-- Colours: taken from the logo, navy `#052f74` and teal `#039b9b`. They live at the top of `css/styles.css` (`:root { ... }`).
-- Rates: from "Rate list.docx", in `js/content.js` (`services[].p`, `procedures`, `setup`).
+Logo, colours and rates come from the client: logo in `images/brand/`, colours (navy `#052f74`, teal `#039b9b`) at the top of `css/styles.css`, rates from "Rate list.docx" in `js/content.js`.
 
-## Kya kahan badalna hai
+## Daily use
+
+```bash
+node tools/build.js     # builds every page, sitemap.xml and robots.txt, then runs the SEO check
+node tools/serve.js     # preview at http://localhost:3000
+```
+
+The built pages (`index.html`, `hi/`, `rate-list/`, `services/`, ...) are committed, so any static host can serve the folder as it is. After changing config, content or a template, run the build again.
+
+## Where to change what
 
 | Cheez | File |
 |---|---|
-| Brand name, city, phone, WhatsApp number, email, address, GST % | `js/config.js` |
-| Services, rates, "who we help", FAQ, reviews, trust and commitment steps (English + हिंदी) | `js/content.js` |
-| Page headings and paragraphs (English in the HTML, Hindi in `data-hi="..."`) | `index.html` |
-| Terms / Privacy / Refund pages (draft templates) | `terms.html`, `privacy.html`, `refund.html` |
-| Colours, fonts | top of `css/styles.css` |
-| Illustrations (placeholders, replace with real photos any time) | `images/*.svg` |
-| Link-preview image (WhatsApp / Facebook) | `images/og-image.png` (1200×630) |
+| Business name, **url**, city, phone, WhatsApp, email, address, areas served, social links, Search Console code, GST | `js/config.js` |
+| Services, rates, "who we help", steps, FAQ, reviews (English + हिंदी) | `js/content.js` |
+| Text of each service landing page (intro, who it is for, FAQ, alt text) | `tools/seo-content.js` |
+| Home page layout and wording | `tools/templates/home.html` (Hindi is in `data-hi="..."` next to each English text) |
+| Header / footer | `tools/templates/header.html`, `footer.html` |
+| Service and rate-list page layout, page titles, structured data | `tools/build.js` |
+| Terms / Privacy / Refund (drafts) | `LEGAL` in `tools/build.js` |
+| Colours, fonts | `:root { ... }` in `css/styles.css` |
+| Images | `images/` (illustrations are placeholders, replace with real photos: keep the file name) |
 
-**WhatsApp number:** set `whatsapp` in `js/config.js` (country code + number, digits only, e.g. `919876543210`). Every Book button and the booking form use it.
+Do not edit the generated `.html` files by hand; the next build overwrites them.
+
+## SEO
+
+Full details: [seo/SEO-GUIDE.md](seo/SEO-GUIDE.md). Backlinks, listings, reviews and copy-paste profile text: [seo/BACKLINKS-AND-LISTINGS.md](seo/BACKLINKS-AND-LISTINGS.md).
+
+In short:
+- While `url`, `city`, `phone`, `email` or the street address in `js/config.js` are still placeholders, the whole site is hidden from search engines (`noindex` and `Disallow: /`).
+- When they are all real, `node tools/build.js` switches indexing on by itself.
+- Sample reviews are hidden automatically on a live site. Put real feedback in `js/content.js` with `real: true`.
 
 ## Rates: how they are shown
 
-Each care service has four rates, exactly as in the rate list: **Hourly, 8 hours, Day care, 24 hours**. Nursing procedures (Foley catheter, IV injection, IM injection) have one rate each. Home ICU Setup is ₹10,30,000 (2 nursing staff + 1 GDA, fully set up).
-
-`gst` in `js/config.js` is `0`, so prices appear exactly as in the rate list. Set it to `18` (for example) to add GST everywhere.
+Each care service has four rates, exactly as in the rate list: **Hourly, 8 hours, Day care, 24 hours**. Nursing procedures (Foley catheter ₹699, IV injection ₹299, IM injection ₹199) have one rate each. Home ICU Setup is ₹10,30,000 (2 nursing staff + 1 GDA, fully set up). `gst` in `js/config.js` is `0`, so prices appear exactly as in the rate list.
 
 ## To confirm with the client
 
-- The last line of the rate list says "Under 5km distance & above 5km 7.80 paisa". The site shows it as **"Travel charge: ₹7.80 per km above 5 km."** Is that right, and is travel within 5 km free? Edit `distance` in `js/content.js`.
+- The last line of the rate list says "Under 5km distance & above 5km 7.80 paisa". The site shows **"Travel charge: ₹7.80 per km above 5 km."** Is that right, and is travel within 5 km free? (`distance` in `js/content.js`)
 - Is **GST** included in these rates or extra?
-- Are the 8-hour, day care and 24-hour rates **totals** (as shown), and how many hours is "day care"?
-- Procedure rates (Foley catheter ₹699, IV ₹299, IM ₹199): per visit?
-- Home ICU Setup ₹10,30,000: one-time, monthly, or per patient? What exactly is included?
+- Are the 8-hour, day care and 24-hour rates **totals**, and how many hours is "day care"?
+- Procedure rates: per visit? Home ICU ₹10,30,000: one-time, monthly, or per patient? What exactly is included?
 
 ## Go-live checklist
 
-- [ ] `js/config.js`: real city, phone, WhatsApp, email, address, Instagram.
-- [ ] `js/content.js`: reviews are **samples** (tagged "Sample"). Replace them with real feedback.
-- [ ] Keep only the claims the business really meets (screening steps, staff training, "you get the caregiver's details before the visit", 24-hour care).
-- [ ] Fill the `[bracketed]` parts in the three legal pages and have them reviewed.
-- [ ] In `index.html` and the three legal pages, delete `<meta name="robots" content="noindex, nofollow">` so Google can index the site.
-- [ ] Make `og:image` in `index.html` an absolute URL on the real domain.
-- [ ] Add the real domain in the hosting dashboard.
+- [ ] Real details in `js/config.js` (all of: url, city, phone, WhatsApp, email, address).
+- [ ] `node tools/build.js` says `Indexing: ON` and `SEO check: no warnings`.
+- [ ] Real reviews with `real: true`, or leave them out.
+- [ ] Legal pages filled in and checked by a lawyer.
+- [ ] Deploy, add the domain, redirect `www` / non-`www` to one version.
+- [ ] Google Search Console: verify, submit `/sitemap.xml`, request indexing for the main pages. Bing Webmaster Tools: import from Search Console.
+- [ ] Google Business Profile and the listings in the SEO folder.
+- [ ] Replace the placeholder illustrations with real photos when available.
 
 ## Images
 
-The service illustrations are original SVGs made for this project (no licensing issues), coloured to match the logo. Swap any of them for real photos: keep the file name, or change `img:` in `js/content.js`.
+The service illustrations are original SVGs made for this project (no licensing issues), coloured to match the logo.
