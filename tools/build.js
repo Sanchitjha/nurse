@@ -368,11 +368,11 @@ function homePage(lang) {
   body = stripSection(body, "AREAS", (SITE.serviceAreas || []).length > 0);
   body = stripSection(body, "REVIEWS", rev.length > 0);
   const title = lang === "hi"
-    ? SITE.city + " में होम केयर | नर्स, मरीज़ और बुज़ुर्ग देखभाल | " + SITE.brand
-    : "Home Care in " + SITE.city + " | Nurses, Patient & Elder Care | " + SITE.brand;
+    ? SITE.city + " में होम केयर, नर्सिंग और बुज़ुर्ग देखभाल | " + SITE.brand
+    : "Home Care in " + SITE.city + " | Nursing & Elder Care | " + SITE.brand;
   const description = lang === "hi"
-    ? SITE.city + " में घर पर प्रशिक्षित नर्स, केयरगिवर और अटेंडेंट: मरीज़ की देखभाल, बुज़ुर्ग देखभाल, क्रिटिकल केयर, बेबी केयर और नर्सिंग प्रक्रियाएँ। साफ़ दरें, WhatsApp पर बुकिंग।"
-    : "Trained nurses, caregivers and attendants at home in " + SITE.city + ": patient care, elder care, critical care, baby care and nursing procedures. Clear rates, book on WhatsApp.";
+    ? SITE.city + " में घर पर प्रशिक्षित नर्स, केयरगिवर और अटेंडेंट: मरीज़, बुज़ुर्ग, क्रिटिकल और बेबी केयर, इंजेक्शन भी। साफ़ दरें, WhatsApp पर बुकिंग।"
+    : "Trained nurses, caregivers and attendants at home in " + SITE.city + ": patient, elder, critical and baby care, plus injections. Clear rates, book on WhatsApp.";
   page({
     lang, logical: "/", title, description, body, withBooking: true, sitemap: true,
     ld: [businessLd(c), websiteLd(), faqLd(c, homeFaq)],
@@ -538,7 +538,7 @@ function ratesPage(lang) {
   const logical = "/rate-list/";
   const crumbs = [{ name: c.b("crumbHome"), url: c.url("/") }, { name: c.b("crumbRates"), url: c.url(logical) }];
   const links = DATA.services.map((s) => '<li><a href="' + c.svcUrl(s.id) + '">' + c.tx(s.name) + "</a></li>").concat(['<li><a href="' + c.svcUrl("procedures") + '">' + c.tx(DATA.proceduresInfo.name) + "</a></li>", '<li><a href="' + c.svcUrl("icu") + '">' + c.tx(DATA.setup.name) + "</a></li>"]).join("");
-  const title = lang === "hi" ? SITE.city + " में होम केयर रेट लिस्ट: प्रति घंटा, 8 घंटे, 24 घंटे | " + SITE.brand : "Home Care Rates in " + SITE.city + ": Hourly, 8 Hours, 24 Hours | " + SITE.brand;
+  const title = lang === "hi" ? SITE.city + " में होम केयर रेट लिस्ट | " + SITE.brand : "Home Care Rates in " + SITE.city + ": Hourly to 24 Hours | " + SITE.brand;
   const description = lang === "hi"
     ? SITE.city + " में घर पर देखभाल की साफ़ दरें। मरीज़ की देखभाल " + c.inr(minHourly) + " प्रति घंटा से, साथ में इंजेक्शन, कैथेटर और होम ICU सेटअप की दरें।"
     : "Clear home care rates in " + SITE.city + ". Patient care from " + c.inr(minHourly) + " per hour, plus elder care, critical care, baby care, injections, catheter and Home ICU Setup rates.";
@@ -667,8 +667,8 @@ write("robots.txt", READY
 const warn = [];
 const seenTitles = new Map(), seenDesc = new Map();
 for (const g of generated) {
-  if (g.title.length > 65) warn.push("title too long (" + g.title.length + "): " + g.url + "  \"" + g.title + "\"");
-  if (g.description.length > 165) warn.push("description too long (" + g.description.length + "): " + g.url);
+  if (g.title.length > (g.lang === "hi" ? 72 : 62)) warn.push("title too long (" + g.title.length + "): " + g.url + "  \"" + g.title + "\"");
+  if (g.description.length > (g.lang === "hi" ? 175 : 160)) warn.push("description too long (" + g.description.length + "): " + g.url);
   if (g.description.length < 70) warn.push("description too short (" + g.description.length + "): " + g.url);
   if (seenTitles.has(g.title)) warn.push("duplicate title: " + g.url + " = " + seenTitles.get(g.title));
   if (seenDesc.has(g.description)) warn.push("duplicate description: " + g.url + " = " + seenDesc.get(g.description));

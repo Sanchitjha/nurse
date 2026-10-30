@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.example.com/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/rate-list/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/rate-list/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/rate-list/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/rate-list/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/patient-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/patient-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/patient-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/patient-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/elder-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/elder-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/elder-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/elder-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/critical-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/critical-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/critical-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/critical-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/alzheimers-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/alzheimers-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/alzheimers-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/alzheimers-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/parkinsons-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/parkinsons-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/parkinsons-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/parkinsons-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/tracheostomy-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/tracheostomy-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/tracheostomy-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/tracheostomy-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/baby-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/baby-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/baby-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/baby-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/attendant/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/attendant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/attendant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/attendant/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/nursing-procedures/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/nursing-procedures/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/nursing-procedures/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/nursing-procedures/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/services/home-icu-setup/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/home-icu-setup/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/home-icu-setup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/home-icu-setup/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/rate-list/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/rate-list/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/rate-list/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/rate-list/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/patient-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/patient-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/patient-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/patient-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/elder-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/elder-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/elder-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/elder-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/critical-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/critical-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/critical-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/critical-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/alzheimers-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/alzheimers-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/alzheimers-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/alzheimers-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/parkinsons-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/parkinsons-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/parkinsons-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/parkinsons-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/tracheostomy-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/tracheostomy-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/tracheostomy-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/tracheostomy-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/baby-care/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/baby-care/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/baby-care/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/baby-care/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/attendant/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/attendant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/attendant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/attendant/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/nursing-procedures/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/nursing-procedures/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/nursing-procedures/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/nursing-procedures/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/services/home-icu-setup/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.example.com/services/home-icu-setup/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.example.com/hi/services/home-icu-setup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.example.com/services/home-icu-setup/"/>
+  </url>
+</urlset>
