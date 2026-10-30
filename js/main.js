@@ -134,4 +134,55 @@
     a.click();
     a.remove();
   });
+
+  /* ---------- hero phone preview slideshow ---------- */
+  (function () {
+    const demo = $("#appDemo");
+    if (!demo) return;
+    const shots = $$(".ad-shot", demo);
+    const dots = $$(".ad-dot");
+    const cap = $("#adCap");
+    if (!shots.length) return;
+
+    let idx = 0;
+    let timer = null;
+    let paused = false;
+
+    function setSlide(n) {
+      idx = (n + shots.length) % shots.length;
+      shots.forEach((el, i) => el.classList.toggle("on", i === idx));
+      dots.forEach((el, i) => {
+        el.classList.toggle("on", i === idx);
+        el.setAttribute("aria-current", i === idx ? "step" : "false");
+      });
+      if (cap && dots[idx]) {
+        cap.textContent = dots[idx].getAttribute("aria-label") || "";
+      }
+    }
+
+    function next() {
+      if (paused) return;
+      setSlide(idx + 1);
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 3400);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        setSlide(i);
+        paused = true;
+        clearInterval(timer);
+        setTimeout(() => { paused = false; startTimer(); }, 8000);
+      });
+    });
+
+    demo.addEventListener("mouseenter", () => { paused = true; });
+    demo.addEventListener("mouseleave", () => { paused = false; });
+    demo.addEventListener("click", () => { setSlide(idx + 1); startTimer(); });
+
+    startTimer();
+  })();
 })();

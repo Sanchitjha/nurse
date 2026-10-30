@@ -79,7 +79,7 @@ window.CONTENT = {
       points: { en: ["Support while walking and moving", "Medicines on time, as prescribed", "Fall prevention and daily routine help"], hi: ["चलने और उठने-बैठने में सहारा", "पर्चे अनुसार समय पर दवा", "गिरने से बचाव और दिनचर्या में मदद"] },
     },
     {
-      id: "trach", img: "procedures.svg", p: { hourly: 799, h8: 899, day: 999, h24: 1299 },
+      id: "trach", img: "tracheostomy-care.jpg", p: { hourly: 799, h8: 899, day: 999, h24: 1299 },
       name: { en: "Tracheostomy Care", hi: "ट्रेकियोस्टोमी देखभाल" },
       cap: { en: "Skilled tube care at home", hi: "घर पर कुशल ट्यूब देखभाल" },
       desc: { en: "Trained support for tracheostomy tube care, cleaning and suction at home, as advised by your doctor.", hi: "घर पर ट्रेकियोस्टोमी ट्यूब की देखभाल, सफ़ाई और सक्शन में प्रशिक्षित सहायता, डॉक्टर की सलाह अनुसार।" },
