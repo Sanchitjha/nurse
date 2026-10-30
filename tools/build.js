@@ -292,6 +292,14 @@ function fontsHref(lang) {
   return "https://fonts.googleapis.com/css2?" + fam + (lang === "hi" ? hi : "") + "&display=swap";
 }
 
+/* Photo drop-in: if images/<name>.webp|jpg|jpeg|png exists, it replaces the illustration images/<name>.svg everywhere. */
+function usePhotos(html) {
+  return html.replace(/\/images\/([a-z0-9-]+)\.svg/g, (m, base) => {
+    for (const ext of ["webp", "jpg", "jpeg", "png"]) if (fs.existsSync(path.join(ROOT, "images", base + "." + ext))) return "/images/" + base + "." + ext;
+    return m;
+  });
+}
+
 /* page({ lang, logical, title, description, body, ld, index, withBooking, type }) -> writes the file */
 function page(o) {
   const lang = o.lang;
@@ -351,7 +359,7 @@ function page(o) {
     ? '<script src="/js/config.js?v=' + ASSET_V.config + '" defer></script>\n<script src="/js/content.js?v=' + ASSET_V.content + '" defer></script>\n<script src="/js/shared.js?v=' + ASSET_V.shared + '" defer></script>\n'
     : "") + '<script src="/js/main.js?v=' + ASSET_V.main + '" defer></script>';
 
-  const html = "<!doctype html>\n<html lang=\"" + lang + '">\n<head>\n' + head + "\n</head>\n<body>\n" + SPRITE + "\n" + shell + "\n" + scripts + "\n</body>\n</html>\n";
+  const html = usePhotos("<!doctype html>\n<html lang=\"" + lang + '">\n<head>\n' + head + "\n</head>\n<body>\n" + SPRITE + "\n" + shell + "\n" + scripts + "\n</body>\n</html>\n");
   const file = (lang === "hi" ? "hi" : "") + (o.logical === "/" ? "/index.html" : o.logical + "index.html");
   write(file.replace(/^\//, ""), html);
   generated.push({ file: file.replace(/^\//, ""), url: self, lang, title: o.title, description: o.description, indexable, sitemap: o.sitemap !== false, logical: o.logical, html });
