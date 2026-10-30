@@ -161,7 +161,7 @@ em { font-style: italic; }
 .svc { background: #fff; border: 1px solid var(--line-2); border-radius: var(--r-l); padding: 12px 12px 22px; box-shadow: var(--shadow-s); display: flex; flex-direction: column; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
 .svc:hover { transform: translateY(-5px); box-shadow: var(--shadow-m); }
 .svc-img { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 10; background: var(--mist); }
-.svc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.svc-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; transition: transform 0.6s var(--ease); }
 .svc:hover .svc-img img { transform: scale(1.05); }
 .svc-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(3, 29, 77, 0.78) 100%); }
 .svc-cap { position: absolute; left: 14px; bottom: 12px; right: 14px; z-index: 1; color: #fff; }
@@ -188,7 +188,7 @@ em { font-style: italic; }
 
 /* ---------- female caregivers ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.split img.art { border-radius: var(--r-l); box-shadow: var(--shadow-m); width: 100%; }
+.split img.art { border-radius: var(--r-l); box-shadow: var(--shadow-m); width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 25%; }
 .split .copy p { font-size: 18px; color: var(--ink-2); }
 .checks { list-style: none; margin: 24px 0 28px; padding: 0; display: grid; gap: 16px; }
 .checks li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; }
@@ -339,7 +339,7 @@ table.price-table { width: 100%; border-collapse: collapse; min-width: 720px; fo
    Additions: trust strip, who-we-help, booking form, estimate, hero chips,
    nav scrollspy, legal pages
    ========================================================================== */
-.split img.art { height: auto; }
+.split img.art { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 25%; }
 .nav a.active { color: var(--ink); }
 .nav a.active::after { right: 0; }
 .quick-link { margin: -6px 0 22px; font-size: 15.5px; }
@@ -484,7 +484,7 @@ table.price-table { width: 100%; border-collapse: collapse; min-width: 720px; fo
 .hero-art { position: relative; z-index: 1; }
 .hero-art::before { content: ""; position: absolute; inset: 8% -3% -7% 7%; background: #cdeceb; border-radius: 48px; transform: rotate(3deg); z-index: 0; }
 .hero-art-card { position: relative; z-index: 1; border-radius: 28px; overflow: hidden; background: #fff; border: 6px solid #fff; box-shadow: var(--shadow-l); }
-.hero-art-card img { width: 100%; height: auto; display: block; }
+.hero-art-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 22%; display: block; }
 .fc-a { left: -22px; top: 9%; }
 .fc-b { right: -14px; bottom: 6%; animation-delay: -3s; }
 
@@ -520,7 +520,7 @@ table.price-table { width: 100%; border-collapse: collapse; min-width: 720px; fo
 .page-hero h1 { font-size: clamp(32px, 4.2vw, 50px); margin-bottom: 16px; }
 .page-hero .lead { font-size: 18px; max-width: 620px; color: var(--ink-2); }
 .svc-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
-.svc-hero-img img { width: 100%; height: auto; display: block; border-radius: var(--r-l); box-shadow: var(--shadow-m); }
+.svc-hero-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 25%; display: block; border-radius: var(--r-l); box-shadow: var(--shadow-m); }
 .tiers-lg { grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 760px; margin-bottom: 22px; }
 .tiers-lg .tier { padding: 18px 6px 16px; border-radius: 14px; }
 .tiers-lg .tier small { font-size: 13px; }
@@ -533,7 +533,7 @@ table.price-table { width: 100%; border-collapse: collapse; min-width: 720px; fo
 .rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .rel-card { display: block; text-decoration: none; background: #fff; border: 1px solid var(--line-2); border-radius: var(--r-l); overflow: hidden; box-shadow: var(--shadow-s); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
 .rel-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); }
-.rel-card img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 10; object-fit: cover; }
+.rel-card img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 25%; }
 .rel-body { display: block; padding: 16px 18px 20px; }
 .rel-body b { display: block; font-family: var(--serif); font-size: 20px; color: var(--ink); margin-bottom: 4px; }
 .rel-body span { font-size: 15px; color: var(--muted); }
